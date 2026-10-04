@@ -1,0 +1,9 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_URL}/eureka/
+  instance:
+    hostname: ${RENDER_EXTERNAL_HOSTNAME}
+    non-secure-port-enabled: false
+    secure-port-enabled: true
+    secure-port: 443
