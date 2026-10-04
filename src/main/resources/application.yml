@@ -12,14 +12,10 @@ spring:
               uri: lb://product-service
               predicates:
                 - Path=/api/products/**
-              filters:
-                - SetRequestHeader=Accept-Encoding, identity
             - id: order-service
               uri: lb://order-service
               predicates:
                 - Path=/api/orders/**
-              filters:
-                - SetRequestHeader=Accept-Encoding, identity
           httpclient:
             connect-timeout: 10000
             read-timeout: 30000
