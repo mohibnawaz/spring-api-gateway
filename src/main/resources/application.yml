@@ -13,13 +13,13 @@ spring:
               predicates:
                 - Path=/api/products/**
               filters:
-                - AddRequestHeader=Accept-Encoding, gzip
+                - SetRequestHeader=Accept-Encoding, identity
             - id: order-service
               uri: lb://order-service
               predicates:
                 - Path=/api/orders/**
               filters:
-                - AddRequestHeader=Accept-Encoding, gzip
+                - SetRequestHeader=Accept-Encoding, identity
           httpclient:
             connect-timeout: 10000
             read-timeout: 30000
