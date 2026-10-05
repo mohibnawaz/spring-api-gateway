@@ -5,14 +5,14 @@ spring:
     name: api-gateway
   cloud:
     gateway:
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "https://fresh-cart-frontend-zeta.vercel.app"
+            allowedMethods: "*"
+            allowedHeaders: "*"
       server:
         webmvc:
-          globalcors:
-            cors-configurations:
-              '[/**]':
-                allowedOrigins: "https://fresh-cart-frontend-zeta.vercel.app"
-                allowedMethods: "*"
-                allowedHeaders: "*"
           routes:
             - id: product-service
               uri: lb://product-service
